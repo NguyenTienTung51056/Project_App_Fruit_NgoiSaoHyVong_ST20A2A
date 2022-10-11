@@ -88,7 +88,8 @@ export default function FormEditProduct(props){
                     type="title" 
                     className="form-control" 
                     id="exampleInputTitle"
-                    onChange={onChangeTitle} 
+                    onChange={onChangeTitle}
+                    defaultValue={props.product.title} 
                     aria-describedby="titleHelp" 
                     placeholder="Enter title"/>
                     <p className="text-red-400 text-xs italic">{errMessage.title}</p>
@@ -99,7 +100,8 @@ export default function FormEditProduct(props){
                     type="description" 
                     className="form-control" 
                     id="exampleInputDescription"
-                    onChange={onChangeDescription} 
+                    onChange={onChangeDescription}
+                    defaultValue={props.product.description} 
                     placeholder="Description"/>
                     <p className="text-red-400 text-xs italic">{errMessage.description}</p>
                 </div>
@@ -110,6 +112,7 @@ export default function FormEditProduct(props){
                     className="form-control" 
                     id="exampleInputImage"
                     onChange={onChangeImage}
+                    defaultValue={props.product.image}
                     placeholder="Image"/>
                     <p className="text-red-400 text-xs italic">{errMessage.image}</p>
                 </div>
@@ -119,7 +122,8 @@ export default function FormEditProduct(props){
                     type="categories" 
                     className="form-control" 
                     id="exampleInputCategories"
-                    onChange={onChangeCategory} 
+                    onChange={onChangeCategory}
+                    defaultValue={props.product.category} 
                     placeholder="Categories"/>
                     <p className="text-red-400 text-xs italic">{errMessage.category}</p>
                 </div>
@@ -129,7 +133,8 @@ export default function FormEditProduct(props){
                     type="details" 
                     className="form-control" 
                     id="exampleInputDetails"
-                    onChange={onChangeDetail} 
+                    onChange={onChangeDetail}
+                    defaultValue={props.product.detail} 
                     placeholder="Details"/>
                     <p className="text-red-400 text-xs italic">{errMessage.detail}</p>
                 </div>
@@ -139,7 +144,8 @@ export default function FormEditProduct(props){
                     type="text" 
                     className="form-control" 
                     id="exampleInputText"
-                    onChange={onChangeColor} 
+                    onChange={onChangeColor}
+                    defaultValue={props.product.color} 
                     placeholder="Color"/>
                     <p className="text-red-400 text-xs italic">{errMessage.color}</p>
                 </div>
@@ -149,7 +155,8 @@ export default function FormEditProduct(props){
                     type="price" 
                     className="form-control" 
                     id="exampleInputPrice"
-                    onChange={onChangePrice} 
+                    onChange={onChangePrice}
+                    defaultValue={props.product.price} 
                     placeholder="Price"/>
                     <p className="text-red-400 text-xs italic">{errMessage.price}</p>
                 </div>
@@ -159,7 +166,8 @@ export default function FormEditProduct(props){
                     type="inStock" 
                     className="form-control" 
                     id="exampleInputInStock"
-                    onChange={onChangeInStock} 
+                    onChange={onChangeInStock}
+                    defaultValue={props.product.inStock} 
                     placeholder="InStock"/>
                     <p className="text-red-400 text-xs italic">{errMessage.inStock}</p>
                 </div>

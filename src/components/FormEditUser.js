@@ -57,6 +57,7 @@ export default function FormEditUser(props){
                     id="exampleInputEmail1"
                     onChange={onChangeEmail} 
                     aria-describedby="emailHelp"
+                    defaultValue={props.user.email}
                     placeholder={props.user.email}/>
                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     <p className="text-red-400 text-xs italic">{errMessage.email}</p>
@@ -67,7 +68,8 @@ export default function FormEditUser(props){
                     type="password" 
                     className="form-control" 
                     id="exampleInputPassword1"
-                    onChange={onChangePassword} 
+                    onChange={onChangePassword}
+                    defaultValue={props.user.username}
                     placeholder={props.user.username}/>
                     <p className="text-red-400 text-xs italic">{errMessage.password}</p>
                 </div>
@@ -77,7 +79,8 @@ export default function FormEditUser(props){
                     type="address" 
                     className="form-control" 
                     id="exampleInputAddress1"
-                    onChange={onChangeAddress} 
+                    onChange={onChangeAddress}
+                    defaultValue={props.user.address.street} 
                     placeholder={props.user.address.street}/>
                     <p className="text-red-400 text-xs italic">{errMessage.address}</p>
                 </div>
