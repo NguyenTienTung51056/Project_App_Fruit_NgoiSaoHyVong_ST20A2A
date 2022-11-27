@@ -1,0 +1,44 @@
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/stylesheets/login.css' />
+        <title>Document</title>
+    </head>
+
+    <body>
+        
+        <input type="checkbox" id="register" hidden class="open__close--register">
+        <label class="background_register" for="register"></label>
+
+        <div class='form__register'>
+            <form action="/user/register" method="post">
+                <h1>Đăng ký</h1>
+                <label for="register" class="login__close"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                    </svg></label>
+                <div>
+                    <input type="text" class="form__input" name="username" placeholder="  Họ và tên">
+                </div>
+                <div>
+                    <input type="email" class="form__input" name="email" placeholder="  Email">
+                </div>
+                <div>
+                    <input type="password" class="form__input" name="password" placeholder=" Mật khẩu">
+                </div>
+                <div>
+                    <input type="password" class="form__input" name="password_1" placeholder=" nhập lại mật khẩu">
+                </div>
+
+                <br />
+                <button class=' form__login-btn btn_hover' for="register" >Đăng ký</button>
+            </form>
+        </div>
+
+    </body>
+
+
