@@ -18,15 +18,22 @@
                   Tiện ích
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Đăng kí</a></li>
-                  <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                  <% if(user){ %>
+                    <li><a class="dropdown-item" href="/login/logout">Đăng xuất</a></li>
+                    <% } else { %>  
+                      <li><a class="dropdown-item" href="/register">Đăng kí</a></li>
+                      <li><a class="dropdown-item" href="/login">Đăng nhập</a></li>
+                      <% } %>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="/product/create">thêm sản phẩm</a></li>
+                  <li><a class="dropdown-item" href="/product/manager">quản lý sản phẩm</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Đăng xuất</a>
-              </li>
+                <% if(user){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Chào <%= user?.username %> </a>
+                 </li>
+                <% } %>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
