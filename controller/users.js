@@ -16,10 +16,11 @@ exports.postRegister = async (req, res, next) => {
     console.log("Email đã tồn tại");
     }else if(req.body.password === req.body.confirmPassword){
         var data = new Users();
-        const { email, password } = req.body;
+        const { email, password, username } = req.body;
         const bcryptPassword = await bcrypt.hash(password, 10);
         data.email = email;
         data.password = bcryptPassword;
+        data.username = username;
         data.save(function (err){
             res.redirect('/');
         });
