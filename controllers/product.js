@@ -23,6 +23,7 @@ const getDetailProduct = async (req, res, next) => {
   }
 };
 
+// ham render trang create product
 const getCreateProductPage = async (req, res) => {
   try {
     res.render("createProduct", { layout: "layout/layoutNoSlider.ejs" });
@@ -41,6 +42,7 @@ const getEditProductPage = async (req, res) => {
   }
 };
 
+// ham them san pham
 const createProduct = async (req, res) => {
   const { ...products } = req.body;
   try {

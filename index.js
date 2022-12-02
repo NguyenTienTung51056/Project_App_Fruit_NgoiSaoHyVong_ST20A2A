@@ -15,6 +15,10 @@ const session = require('express-session')
 //utils
 const {formatDate} = require('./utils/ejs');
 const { verifyTokenUser } = require('./utils/veriflyToken');
+const server = require("http").createServer(app)
+
+const io = require("socket.io")(server)
+
 
 //connect to database
 DB.connectDB();
@@ -43,6 +47,7 @@ app.use(
 
 //public folder
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname,"node_modules")))
 
 
 app.use(expressEjsLayouts)
@@ -51,6 +56,20 @@ app.set('layout','layout/defaultLayout.ejs')
 
 //connect flash
 app.use(flash(session))
+
+
+
+io.on("connection", function(socket){
+    socket.on("newuser",function(username){
+        socket.broadcast.emit("update", username + " joined the conversation")
+    })
+    socket.on("exituser",function(username){
+        socket.broadcast.emit("update", username + " left the conversation")
+    })
+    socket.on("chat",function(message){
+        socket.broadcast.emit("chat", message)
+    })
+})
 
 
 //set global variable
